@@ -1,10 +1,14 @@
-#include <Wire.h>
+#include <Arduino.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
+#include <SPI.h>
+#include "secrets.h"
 
 #define SEALEVELPRESSURE_HPA (1013.25)
 
 Adafruit_BME280 bme;
+
+WiFi.begin(WIFI_SSID, WIFI_PASS);
 
 void setup()
 {
