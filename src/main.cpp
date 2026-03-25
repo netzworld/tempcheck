@@ -11,7 +11,7 @@ Adafruit_BME280 bme;
 
 WiFiClient client;
 
-const char *server = "10.0.0.138"; // Pi's IP on home WiFi (run `hostname -I` on Pi)
+const char *server = "10.0.0.138";
 const int port = 5000;
 
 void connectWiFi()
@@ -70,10 +70,10 @@ void sendData(float temperature, float pressure, float humidity)
                      "Content-Length: " + payload.length() + "\r\n\r\n" +
                      payload;
 
-    // client.print(request);
+    client.print(request);
     // Serial.println("Sent data:");
     // Serial.println(payload);
-    delay(1000);
+    delay(500);
     client.stop();
   }
   else
